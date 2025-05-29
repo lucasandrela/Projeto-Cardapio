@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Josefin";
+    src: url(fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+
+:root{
+    --cor-primaria: #eee8d8;
+    --cor-secundaria: #D98E04;
+    --cor-destaque: #A63F03;
+    --cor-fundo: #397358;
+    --cor-fundo2: #30604a;
+    --cor-texto: #232323;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -15,23 +31,25 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: aliceblue;
+    background-color: alicesoares;
     font-family: Arial, sans-serif;
 }
 
 header {
     width: 100%;
     height: 100px;
-    background-color: #eee8d8;
+    background-color: var(--cor-primaria);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px 100px;
-    color: rgb(196, 196, 196);
+    color: var(--cor-secundaria);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    font-family:"Josefin", Arial, Helvetica, sans-serif;
+    opacity: 0.95;
 }
 
 /* ------------------------LOGO-----------------------*/
@@ -66,43 +84,90 @@ header {
 
 .menu ul li a{
     padding: 10px 40px;
-    color: #fff;
+    color: var(--cor-destaque);
     text-decoration: none;
     display: inline-block;
     transition: tranform 0.3s ease;
-
+    font-size: 15px;
 }
 
 .menu ul li a:hover {
-    color: yellow;
+    color: rgb(0, 0, 0);
     transform: scale(1.2);
 }
 
 /*----------------------SEÇÃO HOME----------------------------*/
 
 .linha_home {
-    background-image: url(https://www.otempo.com.br/content/dam/otempo/editorias/turismo/2024/8/11/turismo-jogos_olimpicos_deparis-minas-bar-cozinha_mineira-1723403413.jpeg);
+    background-image: url(img/imagem_estabelecimentov1.png);
     background-size: cover;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
 }
 
-.linha {
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;  
+}
+
+.Bem_vindo{
+    color: var(--cor-primaria);
+    z-index: 2;
+    display: flex; 
+    margin-right: 60%;
+    height: 1100px; 
+    font-size: 60px;
+    font-family:"Josefin", Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    justify-self: center
+}
+
+.escrita{
+    color: rgb(191, 191, 172);
+    font-size: 30px;
+    margin-top: -27px;
+}
+
+.linha1 {
     width: 100%;
     height: 100vh;
-    background-color: #eee8d8;
-    border-bottom: 1px solid black;
+    background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
 }
 
-/*---------------------------RODA PÉ--------------------------------*/
+.linha2 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-fundo2);
+    display: flex;
+    justify-content: center;
+}
+
+.linha3 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+}
+
+.linha4 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-fundo2);
+    display: flex;
+    justify-content: center;
+}
+
+/*---------------------------RODAPÉ--------------------------------*/
 footer {
     width: 100%;
-    height: 300px;
-    background-color: black;
+    height: 250px;
+    background-color: var(--cor-primaria);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,10 +176,20 @@ footer {
 .col_rodape {
     width: 400px;
     height: 100%;
-    border: 1px solid white;
+}
+
+.instagram img{
+    width: 49px;
+    margin-left: 10px;
+}
+
+.facebook img{
+    width: 40px;
+    margin-left: 15px;
 }
 
 /*----------------------------SEÇÕES--------------------------*/
+
 
 .container1 {
     width: 1200px;
@@ -126,27 +201,108 @@ footer {
     width: 1200px;
     height: 100%;
     padding-top: 110px;
-    background-color: #397358;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.entradas {
+    width: 340px;
+    height: 300px;
+    background-color: var(--cor-secundaria);
+    border-radius: 12px;
+    box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    text-align: center;
+    color: #232323;
+}
+
+.entradas img{
+    border-radius: 12px 12px 0px 0px;
+    width: 340px;
+    height: 180px;
+}
+
+.entradas:hover{
+    background-color: var(--cor-secundaria);
+    transform: scale(1.01);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .container3 {
     width: 1200px;
     height: 100%;
     padding-top: 110px;
-    background-color: #406252;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .container4 {
     width: 1200px;
     height: 100%;
     padding-top: 110px;
-    background-color: #F2CB05;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .container5 {
     width: 1200px;
     height: 100%;
     padding-top: 110px;
-    background-color: #F2B705;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
+
+.entradas h2{
+    font-family: "Josefin", Arial, Helvetica, sans-serif;
+}
+
+
+.entradas p{
+    font-family: "Josefin", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.col_rodape h1{
+    font-family: "Josefin", Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 20px;
+}
+
+/*------------------EFEITOS-----------------*/
+
+.link-com-barrinha {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.link-com-barrinha::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: black;
+  transition: width 0.0s ease;
+}
+
+.link-com-barrinha:hover::after {
+  width: 100%;
+}
